@@ -36,6 +36,34 @@ namespace Figura2
         public abstract void Dibuja();
     }
 
+    class Color
+    {
+      //Enumeraciones o enum como palabra reservada son un tipo especial de variables 
+      // que tienen la propiedad de que su rango de valores es un conjunto de constantes enteras denominadas 
+      // constantes de enumeración, a cada una de las cuales se le asigna un valor
+      public enum Name{White, Red, Green, Blue, Yellow, Brown, Purple, Pink, Black, Silver, Grey, none}
+
+      //Declaracion de atributos
+      public int R,G,B,I;
+
+        //Recuerda que el punto es como poner el this
+        public Color colorName;
+        public Color name;
+
+        public Color ColorName { get => colorName; set => colorName = value; }
+
+        //Constructor de Color
+        public Color(int r, int g, int b, int i=1)
+           {
+              r=R;g=G;b=B;i=1; this.ColorName= colorName;
+           }
+
+          
+      
+
+
+    }
+
     class Circulo : Figura
     {
      private int radio;
@@ -136,6 +164,7 @@ namespace Figura2
             List<Figura> figuras = new List<Figura>();
             figuras.Add(new Circulo());
             figuras.Add(new Rectangulo(new Vector2d(200,200) ));
+            Console.WriteLine("Rectangulo rojo");
             figuras.Add(new Cuadrado(new Vector2d(150,200) ));
             figuras.Add(new Triangulo(new Vector2d(150,250) ));
             figuras.Add(new Decagono(new Vector2d(150,250) ));
